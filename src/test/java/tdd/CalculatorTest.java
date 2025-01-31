@@ -51,6 +51,20 @@ class CalculatorTest {
         assertEquals(expected,actual);
     }
 
+    @Test
+    @DisplayName("Denne test tjekker om et string input returnerer summen som int")
+    void testAddString(){
+        int expected = 6;
+        int actual = calc.add("1,2,3");
+        assertEquals(expected,actual);
+    }
 
+    @Test
+    @DisplayName("Denne test tjekker værdien af alle numrene i et array")
+    void testAddArray(){
+        int expected = 6;
+        int actual = calc.add(new int[]{1,2,3});
+        assertEquals(expected, actual);
+    }
 
 }
