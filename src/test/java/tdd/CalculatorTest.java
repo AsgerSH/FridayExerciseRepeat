@@ -67,4 +67,12 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void testDivideNull(){
+        assertThrows(ArithmeticException.class,()->{
+            calc.divide(3,0);
+        });
+
+    }
+
 }

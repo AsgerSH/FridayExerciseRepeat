@@ -15,6 +15,9 @@ public class Calculator {
     }
 
     public int divide(int a, int b) {
+        if (b == 0){
+            throw new ArithmeticException("Divide by zero");
+        }
         return a / b;
     }
 
@@ -23,13 +26,13 @@ public class Calculator {
     public int add(String s) {
         // Opretter et array ud fra String parametret = "1,2,3" = ["1","2","3"] er hvordan arrayet ser ud bagefter
         // i parametret(regex?) af split, så splitter den en string op hver gang der opstår et komma. \\s* tager højde for spaces, tror jeg?
-        String[] split = s.split(",\\s*");
+        String[] numbers = s.split(",\\s*");
         int sum = 0;
 
         //Iterer gennem hele arrayet "split", og for hver string tal bliver summen tilføjet af int-værdien af den string
         //Eksempelvis første gang split itereres gennem, så tilføjes sum konversionen af "1". Dernæst bliver sum tilføjet 2 = 3 osv.
-        for(String number : split){
-            sum += Integer.parseInt(number);
+        for(String n : numbers){
+            sum += Integer.parseInt(n);
         }
 
         //Returnerer til sidst summen af hele det String array som oprettes
